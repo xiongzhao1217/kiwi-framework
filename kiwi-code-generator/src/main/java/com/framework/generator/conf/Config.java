@@ -20,11 +20,11 @@ public class Config {
     /**
      * 项目模块前缀
      */
-    public static String PROJECT_MODULE_PREFIX = "jd-demo";
+    public static String PROJECT_MODULE_PREFIX = "kiwi-demo";
     /**
      * 包路径
      */
-    public static String BASE_PACKAGE = "com.jd.demo";
+    public static String BASE_PACKAGE = "com.kiwiframework.demo";
     /**
      * 业务模块路径
      */
