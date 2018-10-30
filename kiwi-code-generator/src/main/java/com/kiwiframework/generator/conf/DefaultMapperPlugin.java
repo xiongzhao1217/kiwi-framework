@@ -1,4 +1,4 @@
-package com.framework.generator.conf;
+package com.kiwiframework.generator.conf;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;

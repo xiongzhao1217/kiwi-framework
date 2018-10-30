@@ -1,8 +1,8 @@
-package com.framework.generator;
+package com.kiwiframework.generator;
 
-import com.framework.generator.conf.Config;
+import com.kiwiframework.generator.conf.Config;
 import com.google.common.base.CaseFormat;
-import com.framework.generator.utils.FileUtils;
+import com.kiwiframework.generator.utils.FileUtils;
 import freemarker.template.TemplateExceptionHandler;
 import org.apache.commons.lang3.StringUtils;
 import org.mybatis.generator.api.MyBatisGenerator;
@@ -122,7 +122,7 @@ public class CodeGenerator {
         context.setJdbcConnectionConfiguration(jdbcConnectionConfiguration);
         // 插件配置
         PluginConfiguration pluginConfiguration = new PluginConfiguration();
-        pluginConfiguration.setConfigurationType("DefaultMapperPlugin");
+        pluginConfiguration.setConfigurationType("com.kiwiframework.generator.conf.DefaultMapperPlugin");
         pluginConfiguration.addProperty("mappers", Config.MAPPER_INTERFACE_REFERENCE);
         context.addPluginConfiguration(pluginConfiguration);
 
@@ -162,7 +162,7 @@ public class CodeGenerator {
 
         // 数据库字段与java字段类型映射
         JavaTypeResolverConfiguration javaTypeResolverConfiguration = new JavaTypeResolverConfiguration();
-        javaTypeResolverConfiguration.setConfigurationType("JavaTypeResolverImpl");
+        javaTypeResolverConfiguration.setConfigurationType("com.kiwiframework.generator.conf.JavaTypeResolverImpl");
         context.setJavaTypeResolverConfiguration(javaTypeResolverConfiguration);
 
         TableConfiguration tableConfiguration = new TableConfiguration(context);

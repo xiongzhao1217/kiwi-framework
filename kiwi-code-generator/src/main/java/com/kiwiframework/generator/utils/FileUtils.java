@@ -1,4 +1,4 @@
-package com.framework.generator.utils;
+package com.kiwiframework.generator.utils;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package com.framework.generator.conf;
+package com.kiwiframework.generator.conf;
 
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl;

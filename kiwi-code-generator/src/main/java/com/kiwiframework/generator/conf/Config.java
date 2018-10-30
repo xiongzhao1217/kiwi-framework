@@ -1,7 +1,7 @@
-package com.framework.generator.conf;
+package com.kiwiframework.generator.conf;
 
 import com.alibaba.fastjson.JSON;
-import com.framework.generator.utils.FileUtils;
+import com.kiwiframework.generator.utils.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
