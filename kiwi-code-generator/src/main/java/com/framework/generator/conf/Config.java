@@ -1,7 +1,7 @@
-package com.jd.ka.tools.generator.conf;
+package com.framework.generator.conf;
 
 import com.alibaba.fastjson.JSON;
-import com.jd.ka.tools.generator.utils.FileUtils;
+import com.framework.generator.utils.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

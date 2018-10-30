@@ -1,6 +1,5 @@
-package com.jd.ka.tools.generator.conf;
+package com.framework.generator.conf;
 
-import com.jd.ka.tools.generator.conf.Config;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl;
 
@@ -12,9 +11,9 @@ import java.util.Iterator;
  * 覆盖数据库类型与java类型映射
  * @author xiongzhao
  */
-public class KaJavaTypeResolverImpl extends JavaTypeResolverDefaultImpl {
+public class JavaTypeResolverImpl extends JavaTypeResolverDefaultImpl {
 
-    public KaJavaTypeResolverImpl() {
+    public JavaTypeResolverImpl() {
         super();
         // 读取配置文件中的类型映射配置，并进行覆盖
         overrideDataType();

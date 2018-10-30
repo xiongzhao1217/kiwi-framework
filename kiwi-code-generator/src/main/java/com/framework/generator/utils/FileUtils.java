@@ -1,4 +1,4 @@
-package com.jd.ka.tools.generator.utils;
+package com.framework.generator.utils;
 
 import java.io.*;
 

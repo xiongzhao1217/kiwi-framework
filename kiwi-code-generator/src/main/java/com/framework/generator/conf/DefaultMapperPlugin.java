@@ -1,4 +1,4 @@
-package com.jd.ka.tools.generator.conf;
+package com.framework.generator.conf;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
@@ -16,7 +16,7 @@ import java.util.List;
  * 自定义mapper xml生成内容
  * @author xiongzhao
  */
-public class KaMapperPlugin extends MapperPlugin {
+public class DefaultMapperPlugin extends tk.mybatis.mapper.generator.MapperPlugin {
 
     @Override
     public boolean sqlMapDocumentGenerated(Document document, IntrospectedTable introspectedTable) {
