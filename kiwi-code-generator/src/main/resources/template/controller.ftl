@@ -1,9 +1,9 @@
 package ${basePackage}${baseController}${modulePath};
-import Result;
-import ResultGenerator;
+import com.kiwiframework.easycoding.api.Result;
+import com.kiwiframework.easycoding.api.ResultGenerator;
 import ${basePackage}.domain${modulePath}.${modelNameUpperCamel};
 import ${basePackage}.service${modulePath}.${modelNameUpperCamel}Service;
-import PageBean;
+import com.kiwiframework.easycoding.PageBean;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
