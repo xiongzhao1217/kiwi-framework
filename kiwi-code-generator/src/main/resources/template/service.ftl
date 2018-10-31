@@ -1,7 +1,7 @@
 package ${basePackage}.service${modulePath};
 
 import ${basePackage}.${modelPackageName}${modulePath}.${modelNameUpperCamel};
-import com.jd.ka.tools.easycoding.base.BaseService;
+import BaseService;
 /**
  * Created on ${date}.
  * @author ${author}.
