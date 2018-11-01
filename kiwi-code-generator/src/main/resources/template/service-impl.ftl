@@ -3,7 +3,7 @@ package ${basePackage}.service${modulePath}.impl;
 import ${basePackage}.dao${modulePath}.${modelNameUpperCamel}Mapper;
 import ${basePackage}.${modelPackageName}${modulePath}.${modelNameUpperCamel};
 import ${basePackage}.service${modulePath}.${modelNameUpperCamel}Service;
-import AbstractService;
+import com.kiwiframework.easycoding.base.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;

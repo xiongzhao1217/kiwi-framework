@@ -98,7 +98,7 @@ public class Config {
     /**
      * Mapper插件基础接口的完全限定名
      */
-    public static String MAPPER_INTERFACE_REFERENCE = "com.jd.ka.tools.easycoding.base.BaseMapper";
+    public static String MAPPER_INTERFACE_REFERENCE = "com.kiwiframework.easycoding.base.BaseMapper";
 
 
     public static String PACKAGE_SUFFIX_DOMIAN = "";

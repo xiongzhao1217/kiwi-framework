@@ -1,7 +1,7 @@
 package ${basePackage}${baseController}${modulePath};
 import com.kiwiframework.easycoding.api.Result;
 import com.kiwiframework.easycoding.api.ResultGenerator;
-import ${basePackage}.domain${modulePath}.${modelNameUpperCamel};
+import ${basePackage}.model${modulePath}.${modelNameUpperCamel};
 import ${basePackage}.service${modulePath}.${modelNameUpperCamel}Service;
 import com.kiwiframework.easycoding.PageBean;
 import com.github.pagehelper.PageHelper;
