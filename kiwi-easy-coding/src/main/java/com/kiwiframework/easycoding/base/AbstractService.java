@@ -4,7 +4,7 @@ import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.kiwiframework.easycoding.PageBean;
-import com.kiwiframework.easycoding.exception.BizException;
+import com.kiwiframework.core.exception.AppException;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
@@ -91,7 +91,7 @@ public abstract class AbstractService<T> implements BaseService<T> {
             field.set(model, value);
             return mapper.selectOne(model);
         } catch (ReflectiveOperationException e) {
-            throw new BizException(e.getMessage(), e);
+            throw new AppException(e.getMessage(), e);
         }
     }
 

@@ -10,8 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>kiwi-core</module>
         <module>kiwi-code-generator</module>
-         <module>kiwi-easy-coding</module>
+        <module>kiwi-easy-coding</module>
     </modules>
 
     <properties>

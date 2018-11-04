@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kiwiframework</groupId>
-    <artifactId>kiwi-easy-coding</artifactId>
+    <artifactId>kiwi-core</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <parent>
@@ -15,11 +15,6 @@
     </parent>
 
     <dependencies>
-        <dependency>
-            <groupId>com.kiwiframework</groupId>
-            <artifactId>kiwi-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>

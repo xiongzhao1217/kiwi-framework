@@ -1,4 +1,4 @@
-package com.kiwiframework.easycoding.api;
+package com.kiwiframework.core.enums;
 
 /**
  * 响应码枚举，参考HTTP状态码的语义
@@ -7,6 +7,8 @@ package com.kiwiframework.easycoding.api;
 public enum ResultCode {
     //成功
     SUCCESS("200"),
+    // token过期
+    TOKEN_EXPRIED("301"),
     //失败
     FAIL("400"),
     //未认证（签名错误）

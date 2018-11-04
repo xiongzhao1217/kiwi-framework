@@ -1,6 +1,7 @@
 package com.kiwiframework.easycoding.api;
 
 import com.alibaba.fastjson.JSON;
+import com.kiwiframework.core.enums.ResultCode;
 
 /**
  * 统一API响应结果封装

@@ -1,5 +1,7 @@
 package com.kiwiframework.easycoding.api;
 
+import com.kiwiframework.core.enums.ResultCode;
+
 /**
  * 响应结果生成工具
  * @author xiongzhao
