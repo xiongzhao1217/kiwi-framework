@@ -8,7 +8,7 @@ import com.kiwiframework.core.enums.ResultCode;
  */
 public class AppException extends RuntimeException {
 
-    private String code;
+    private Integer code;
 
     public AppException() {
     }

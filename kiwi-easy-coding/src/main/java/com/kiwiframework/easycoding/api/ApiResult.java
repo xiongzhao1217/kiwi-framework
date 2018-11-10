@@ -7,22 +7,22 @@ import com.kiwiframework.core.enums.ResultCode;
  * 统一API响应结果封装
  * @author xiongzhao
  */
-public class Result<T> {
-    private String code;
+public class ApiResult<T> {
+    private Integer code;
     private String message;
     private T data;
 
-    public Result setCode(String code) {
+    public ApiResult setCode(Integer code) {
         this.code = code;
         return this;
     }
 
-    public Result setCode(ResultCode resultCode) {
+    public ApiResult setCode(ResultCode resultCode) {
         this.code = resultCode.code();
         return this;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
@@ -30,16 +30,16 @@ public class Result<T> {
         return message;
     }
 
-    public Result setMessage(String message) {
+    public ApiResult setMessage(String message) {
         this.message = message;
         return this;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public Result setData(T data) {
+    public ApiResult setData(T data) {
         this.data = data;
         return this;
     }

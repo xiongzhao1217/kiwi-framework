@@ -6,25 +6,32 @@ package com.kiwiframework.core.enums;
  */
 public enum ResultCode {
     //成功
-    SUCCESS("200"),
+    SUCCESS(0, "成功"),
     // token过期
-    TOKEN_EXPRIED("301"),
+    TOKEN_EXPRIED(301, "token过期"),
     //失败
-    FAIL("400"),
+    FAIL(400, "失败"),
     //未认证（签名错误）
-    UNAUTHORIZED("401"),
+    UNAUTHORIZED(401, "未认证"),
     //接口不存在
-    NOT_FOUND("404"),
+    NOT_FOUND(404, "接口不存在"),
     //服务器内部错误
-    INTERNAL_SERVER_ERROR("500");
+    INTERNAL_SERVER_ERROR(500, "系统错误");
 
-    private final String code;
+    private final int code;
 
-    ResultCode(String code) {
+    private final String message;
+
+    ResultCode(int code, String message) {
         this.code = code;
+        this.message = message;
     }
 
-    public String code() {
+    public Integer code() {
         return code;
+    }
+
+    public String message() {
+        return message;
     }
 }
