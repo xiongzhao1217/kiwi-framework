@@ -9,32 +9,38 @@ import com.kiwiframework.core.enums.ResultCode;
 public class ResultGenerator {
     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
 
-    public static ApiResult genSuccessResult() {
+    public static ApiResult success() {
         return new ApiResult()
                 .setCode(ResultCode.SUCCESS)
                 .setMessage(ResultCode.SUCCESS.message());
     }
 
-    public static <T> ApiResult genSuccessResult(T data) {
+    public static <T> ApiResult success(T data) {
         return new ApiResult()
                 .setCode(ResultCode.SUCCESS)
                 .setMessage(ResultCode.SUCCESS.message())
                 .setData(data);
     }
 
-    public static ApiResult genFailResult(String message) {
+    public static ApiResult error(String message) {
         return new ApiResult()
                 .setCode(ResultCode.FAIL)
                 .setMessage(message);
     }
 
-    public static ApiResult genFailResult(Integer code, String message) {
+    public static ApiResult error(ResultCode resultCode) {
+        return new ApiResult()
+                .setCode(resultCode.code())
+                .setMessage(resultCode.message());
+    }
+
+    public static ApiResult error(Integer code, String message) {
         return new ApiResult()
                 .setCode(code)
                 .setMessage(message);
     }
 
-    public static ApiResult genFailResult(ResultCode resultCode, String message) {
+    public static ApiResult error(ResultCode resultCode, String message) {
         return new ApiResult()
                 .setCode(resultCode.code())
                 .setMessage(message);

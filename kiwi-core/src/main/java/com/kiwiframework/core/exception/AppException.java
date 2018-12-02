@@ -32,4 +32,12 @@ public class AppException extends RuntimeException {
         super(message, cause);
         this.code = resultCode.code();
     }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 }
