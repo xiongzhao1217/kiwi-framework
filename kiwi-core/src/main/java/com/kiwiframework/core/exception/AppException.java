@@ -18,6 +18,11 @@ public class AppException extends RuntimeException {
         this.code = ResultCode.FAIL.code();
     }
 
+    public AppException(ResultCode resultCode) {
+        super(resultCode.message());
+        this.code = resultCode.code();
+    }
+
     public AppException(ResultCode resultCode, String message) {
         super(message);
         this.code = resultCode.code();

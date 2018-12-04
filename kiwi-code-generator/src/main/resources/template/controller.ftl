@@ -24,28 +24,28 @@ public class ${modelNameUpperCamel}Controller {
     @ResponseBody
     public ApiResult add(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.insertSelective(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping(value = "/delete")
     @ResponseBody
     public ApiResult delete(@RequestParam Integer id) {
         ${modelNameLowerCamel}Service.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping(value = "/update")
     @ResponseBody
     public ApiResult update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.updateSelective(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @GetMapping(value = "/detail")
     @ResponseBody
     public ApiResult detail(@RequestParam Integer id) {
         ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.selectById(id);
-        return ResultGenerator.genSuccessResult(${modelNameLowerCamel});
+        return ResultGenerator.success(${modelNameLowerCamel});
     }
 
     @GetMapping(value = "/list")
@@ -54,6 +54,6 @@ public class ${modelNameUpperCamel}Controller {
         PageHelper.startPage(pageBean).setOrderBy(pageBean.getOrderBy());
         List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.find(query);
         PageInfo pageInfo = new PageInfo(list);
-        return ResultGenerator.genSuccessResult(pageInfo);
+        return ResultGenerator.success(pageInfo);
     }
 }

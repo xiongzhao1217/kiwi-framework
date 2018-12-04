@@ -11,13 +11,14 @@ import tk.mybatis.mapper.entity.Condition;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.util.Date;
 import java.util.List;
 
 /**
  * 基于通用MyBatis Mapper插件的Service接口的实现
  * @author xiongzhao
  */
-public abstract class AbstractService<T> implements BaseService<T> {
+public abstract class AbstractService<T extends BaseModel> implements BaseService<T> {
 
     @Autowired
     protected BaseMapper<T> mapper;
@@ -34,16 +35,22 @@ public abstract class AbstractService<T> implements BaseService<T> {
 
     @Override
     public int insert(T model) {
+        model.setCreateTime(new Date());
         return mapper.insert(model);
     }
 
     @Override
     public int insertSelective(T model) {
+        model.setCreateTime(new Date());
         return mapper.insertSelective(model);
     }
 
     @Override
     public int insertBatch(List<T> models) {
+        Date now = new Date();
+        for (T model: models) {
+            model.setCreateTime(now);
+        }
         return mapper.insertList(models);
     }
 
@@ -64,16 +71,19 @@ public abstract class AbstractService<T> implements BaseService<T> {
 
     @Override
     public int update(T model) {
+        model.setUpdateTime(new Date());
         return mapper.updateByPrimaryKey(model);
     }
 
     @Override
     public int updateSelective(T model) {
+        model.setUpdateTime(new Date());
         return mapper.updateByPrimaryKeySelective(model);
     }
 
     @Override
     public int updateByConditionSelective(T model, Condition condition) {
+        model.setUpdateTime(new Date());
         return mapper.updateByConditionSelective(model, condition);
     }
 
