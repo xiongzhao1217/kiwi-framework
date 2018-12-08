@@ -118,7 +118,7 @@ public class CodeGeneratorTool {
     <property name="sqlSessionTemplateBeanName" value="sqlSession"></property>
 </bean>
 ```
-* sprintboot项目可以在应用启动类上使用@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.kiwiboot.kiwisso.dao")注解代替，有关tk-mybatis可参考(官方文档)[https://github.com/abel533/Mapper]
+* sprintboot项目可以在应用启动类上使用@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.kiwiboot.kiwisso.dao")注解代替，有关tk-mybatis可参考[官方文档](https://github.com/abel533/Mapper)
 
 ## 如何自定义数据库字段类型对应的java类型
 * 有时我们在数据库中定义字段的类型，某些情况下，为了少占用空间，我们选择使用SMALLINT作为字段类型，而mybatis-generator默认将该类型映射为java的Short，显然这种情况下如果映射为Integer在代码中操作更方便，类似这样的场景我们可以通过配置来覆盖默认的映射关系
