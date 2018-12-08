@@ -12,7 +12,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 * 支持自定义代码模块，对代码风格进行定制化
 
 ## 环境要求
-* **spring4及以上** 基础方法的抽象封装依赖spring4提供的对泛型注入的支持，如果spring版本在4以下，service层的代码将不起作用，建议升级spring版本到4以上，我们也可以自己实现service层代码，或者通过**[自定义模板](http://git.jd.com/xiongzhao1/ka-tools/wikis/home#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF)**生成servive层
+* **spring4及以上** 基础方法的抽象封装依赖spring4提供的对泛型注入的支持，如果spring版本在4以下，service层的代码将不起作用，建议升级spring版本到4以上，我们也可以自己实现service层代码，或者通过 **[自定义模板](http://git.jd.com/xiongzhao1/ka-tools/wikis/home#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF)** 生成servive层
 
 ## 快速上手
 * **引入maven依赖**
@@ -105,10 +105,10 @@ public class CodeGeneratorTool {
 * 生成代码结构
 ![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp1.jpg?raw=true)
 * service类
-![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp2.jpg?raw=true)
-![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp2.jpg?raw=true)
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp2.png?raw=true)
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp2.png?raw=true)
 * service类继承的基类已经实现了单表操作常用的方法，下面的方法可以直接使用，不用再写sql
-![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp4.jpg?raw=true)
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp4.png?raw=true)
 
 ## 项目中使用
 * 通用Mapper依赖第三方包tk-mybatis,数据源的mapper扫描配置类需要由org.mybatis.spring.mapper.MapperScannerConfigurer改为tk.mybatis.spring.mapper.MapperScannerConfigurer
