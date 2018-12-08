@@ -12,7 +12,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 * 支持自定义代码模块，对代码风格进行定制化
 
 ## 环境要求
-* **spring4及以上** 基础方法的抽象封装依赖spring4提供的对泛型注入的支持，如果spring版本在4以下，service层的代码将不起作用，建议升级spring版本到4以上，我们也可以自己实现service层代码，或者通过 **[自定义模板](http://git.jd.com/xiongzhao1/ka-tools/wikis/home#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF)** 生成servive层
+* **spring4及以上** 基础方法的抽象封装依赖spring4提供的对泛型注入的支持，如果spring版本在4以下，service层的代码将不起作用，建议升级spring版本到4以上，我们也可以自己实现service层代码，或者通过 **[自定义模板](https://github.com/xiongzhao1217/kiwi-framework/blob/master/doc/code-generator.md#%E8%BF%9B%E9%98%B6%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF)** 生成servive层
 
 ## 快速上手
 * **引入maven依赖**
@@ -118,7 +118,7 @@ public class CodeGeneratorTool {
     <property name="sqlSessionTemplateBeanName" value="sqlSession"></property>
 </bean>
 ```
-* sprintboot项目可以在应用启动类上使用@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.kiwiboot.kiwisso.dao")注解代替，有关tk-mybatis可参考[官方文档](https://github.com/abel533/Mapper)
+* sprintboot项目可以在应用启动类上使用@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.kiwiboot.kiwisso.dao")注解代替，详情可参考[【tk-mybatis官方文档】](https://github.com/abel533/Mapper)
 
 ## 如何自定义数据库字段类型对应的java类型
 * 有时我们在数据库中定义字段的类型，某些情况下，为了少占用空间，我们选择使用SMALLINT作为字段类型，而mybatis-generator默认将该类型映射为java的Short，显然这种情况下如果映射为Integer在代码中操作更方便，类似这样的场景我们可以通过配置来覆盖默认的映射关系
