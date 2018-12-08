@@ -118,7 +118,7 @@ public class CodeGeneratorTool {
     <property name="sqlSessionTemplateBeanName" value="sqlSession"></property>
 </bean>
 ```
-* sprintboot项目可以在应用启动类上使用@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.kiwiboot.kiwisso.dao")注解代替，有关tk-mybatis可参考(官方文档)[]
+* sprintboot项目可以在应用启动类上使用@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.kiwiboot.kiwisso.dao")注解代替，有关tk-mybatis可参考(官方文档)[https://github.com/abel533/Mapper]
 
 ## 如何自定义数据库字段类型对应的java类型
 * 有时我们在数据库中定义字段的类型，某些情况下，为了少占用空间，我们选择使用SMALLINT作为字段类型，而mybatis-generator默认将该类型映射为java的Short，显然这种情况下如果映射为Integer在代码中操作更方便，类似这样的场景我们可以通过配置来覆盖默认的映射关系
@@ -133,7 +133,7 @@ db.java.type.map={"SMALLINT": "java.lang.Integer", "DECIMAL": "java.lang.Double"
 ## 【进阶】如何自定义模板
 * 有时我们希望自己封装统一的api响应结果，这时候生成器默认的controller模板可能不适合我们，我们可以在src/test/resources/template目录下建立模板文件，生成器在执行时会优先读取我们自定义的模板，当自定义模板不存在时会使用生成器内部定义好的默认模板进行代码生成。像这样的场景还包括对servive层继承的抽象类的扩展，我们可以自己编写抽象类，通过自定义模板让servive层继承我们自己的抽象类。
 * 在src/test/resources/template目录下新建模板文件，支持自定义的模板包括控制器模板controller.ftl、serive模板service.ftl、service实现类模板service-impl.ftl，建立与模板名称一致的文件即可相应覆盖
-![image](/uploads/d8328563b328252a57db44265a0e7baf/image.png)
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp5.png?raw=true)
 * 以控制器模板controller.ftl为例，很多时候我们只需要复制一份生成器默认的模板，然后进行小的改动就可实现我们自定义的需求，例如我们通过替换模板中默认引用的统一api响应类ApiResult和ResultGenerator实现自己封装统一的api响应结果的需求。模板中必要的变量已经定义好，通过freemarker语法引入变量的值。
 
 ```
