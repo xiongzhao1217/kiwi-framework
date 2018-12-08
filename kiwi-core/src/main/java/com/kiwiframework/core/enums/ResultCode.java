@@ -7,12 +7,12 @@ package com.kiwiframework.core.enums;
 public enum ResultCode {
     //成功
     SUCCESS(0, "成功"),
-    // token过期
-    TOKEN_EXPRIED(301, "token过期"),
-    //失败
+    // 接口无权访问
+    UNAUTHORIZED(301, "接口无权访问"),
+    // 失败
     FAIL(400, "失败"),
-    //未认证（签名错误）
-    UNAUTHORIZED(401, "未认证"),
+    // 未认证
+    TOKEN_EXPRIED(401, "未认证"),
     //接口不存在
     NOT_FOUND(404, "接口不存在"),
     //服务器内部错误
