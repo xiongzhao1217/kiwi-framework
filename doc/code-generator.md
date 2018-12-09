@@ -106,7 +106,7 @@ public class CodeGeneratorTool {
 ![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp1.jpg?raw=true)
 * service类
 ![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp2.png?raw=true)
-![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp2.png?raw=true)
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp3.png?raw=true)
 * service类继承的基类已经实现了单表操作常用的方法，下面的方法可以直接使用，不用再写sql
 ![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp4.png?raw=true)
 
