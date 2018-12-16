@@ -10,6 +10,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 * 代码生成器支持业务路径配置，生成的model，mapper，service，controller等基础代码会自动放入业务路径下
 * 支持自定义生成的model类中的属性类型，如数据库字段类型smallint生成domain的字段类型为Integer
 * 支持自定义代码模块，对代码风格进行定制化
+* 支持生成lombok风格的代码，大大减少代码量和易用性
 
 ## 环境要求
 * **spring4及以上** 基础方法的抽象封装依赖spring4提供的对泛型注入的支持，如果spring版本在4以下，service层的代码将不起作用，建议升级spring版本到4以上，我们也可以自己实现service层代码，或者通过 **[自定义模板](https://github.com/xiongzhao1217/kiwi-framework/blob/master/doc/code-generator.md#%E8%BF%9B%E9%98%B6%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF)** 生成servive层
