@@ -54,6 +54,8 @@ jdbc.diver.class.name=com.mysql.jdbc.Driver
 ```
 # 注释作者,默认CodeGenerator
 doc.author=xiongzhao
+# 是否使用lombok，默认false, 如果开启，model类会生成@Data和@Builder注解，同时增加@Tolerate构造
+model.use.lombok=true
 # 项目模块前缀,默认与项目根目录相同(项目mvc层在不同的模块中，可选该配置)
 project.module.prefix=kiwi-boot
 # 需要生成代码的模块名称(项目mvc层在同一个模块中,该配置必填)
@@ -130,6 +132,14 @@ public class CodeGeneratorTool {
 # key为数据库中的字段类型，value为java字段类型
 db.java.type.map={"SMALLINT": "java.lang.Integer", "DECIMAL": "java.lang.Double"}
 ```
+
+## 如何开启lombok配置
+```
+model.use.lombok=true
+```
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_lombok1.png?raw=true)
+![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_lombok2.png?raw=true)
+* 开启后，model类会生成@Data和@Builder注解，增加@Tolerate构造方法，同时生成model属性常量，这样我们在使用Condition查询时，就不用手写字段名了
 
 ## 【进阶】如何自定义模板
 * 有时我们希望自己封装统一的api响应结果，这时候生成器默认的controller模板可能不适合我们，我们可以在src/test/resources/template目录下建立模板文件，生成器在执行时会优先读取我们自定义的模板，当自定义模板不存在时会使用生成器内部定义好的默认模板进行代码生成。像这样的场景还包括对servive层继承的抽象类的扩展，我们可以自己编写抽象类，通过自定义模板让servive层继承我们自己的抽象类。
