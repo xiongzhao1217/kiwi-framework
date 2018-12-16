@@ -35,8 +35,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 code-generator负责代码生成，scope申明为test，easy-coding包负责方法抽象封装，统一响应结果封装
 <br>**注：由于jar包发布在我自己的私服上，直接引入依赖jar包不会被下载下来，建议下载源码后打包发布到自己的私服上**
 * **快速配置**
-<br>一般我们会在src/test下进行代码生成操作，这样的好处是test下的代码不会被打包。
-在src/test/resources目录下新建code_generator.properties文件，内容如下
+<br>我们在在src/test/resources目录下新建code_generator.properties文件，内容如下
 
 ```
 # 需要生成代码的模块名称(项目mvc层在同一个模块中,该配置必填)
