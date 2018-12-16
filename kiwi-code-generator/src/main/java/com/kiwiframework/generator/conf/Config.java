@@ -100,6 +100,10 @@ public class Config {
      */
     public static String MAPPER_INTERFACE_REFERENCE = "com.kiwiframework.easycoding.base.BaseMapper";
 
+    /**
+     * 是否使用lombok
+     */
+    public static boolean MODEL_USE_LOMBOK = false;
 
     public static String PACKAGE_SUFFIX_DOMIAN = "";
     public static String PACKAGE_SUFFIX_DAO = "";
@@ -160,6 +164,7 @@ public class Config {
         BASE_MAPPER_XML_PATH = pro.getProperty("base.mapper.xml.path")==null?BASE_MAPPER_XML_PATH:pro.getProperty("base.mapper.xml.path");
         DB_JAVA_TYPE_MAP = StringUtils.isEmpty(pro.getProperty("db.java.type.map"))?null:JSON.parseObject(pro.getProperty("db.java.type.map"), Map.class);
         MAPPER_INTERFACE_REFERENCE = StringUtils.isEmpty(pro.getProperty("mapper.super.interface"))?MAPPER_INTERFACE_REFERENCE:pro.getProperty("mapper.super.interface");
+        MODEL_USE_LOMBOK = StringUtils.isEmpty(pro.getProperty("model.use.lombok"))? MODEL_USE_LOMBOK : pro.getProperty("model.use.lombok").equals("true");
     }
 
     /**

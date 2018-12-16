@@ -124,6 +124,10 @@ public class CodeGenerator {
         PluginConfiguration pluginConfiguration = new PluginConfiguration();
         pluginConfiguration.setConfigurationType("com.kiwiframework.generator.conf.DefaultMapperPlugin");
         pluginConfiguration.addProperty("mappers", Config.MAPPER_INTERFACE_REFERENCE);
+        if (Config.MODEL_USE_LOMBOK) {
+            pluginConfiguration.addProperty("lombok", "Data,Builder");
+            pluginConfiguration.addProperty("generateColumnConsts", "true");
+        }
         context.addPluginConfiguration(pluginConfiguration);
 
         // model配置
@@ -135,6 +139,7 @@ public class CodeGenerator {
         }
         javaModelGeneratorConfiguration.setTargetProject(modelPath);
         javaModelGeneratorConfiguration.setTargetPackage(Config.MODEL_PACKAGE + Config.BIZ_MODULE_PATH);
+        javaModelGeneratorConfiguration.addProperty("rootClass", "com.kiwiframework.easycoding.base.BaseModel");
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         // mapper xml配置

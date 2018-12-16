@@ -12,6 +12,16 @@ import java.util.Date;
 public class BaseModel {
 
     /**
+     * 创建时间字段名称常量
+     */
+    public static final String CREATE_TIME = "createTime";
+
+    /**
+     * 更新时间字段名称常量
+     */
+    public static final String UPDATE_TIME = "updateTime";
+
+    /**
      * 创建时间
      */
     @Column(name = "create_time")
