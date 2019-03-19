@@ -18,7 +18,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 ## 快速上手
 * **引入maven依赖**
 
-```
+```java
 <dependency>
     <groupId>com.kiwiframework</groupId>
     <artifactId>kiwi-code-generator</artifactId>
@@ -83,7 +83,7 @@ jdbc.diver.class.name=com.mysql.jdbc.Driver
 * **代码生成**
 <br>在src/test/java下的任意目录新建代码生成入口类，如CodeGeneratorTest.java，引入工具包中的CodeGenerator类，运行main方法，生成的代码会自动放入相应的位置。CodeGenerator提供了dao、servive和controller层分别生成和全部生成的静态方法，使用时可以根据需要选择。CodeGenerator.genCode方法默认会将数据库中的表名按照驼峰法转换后生成对应的java文件名称，如果我们有自定义的需求，可以通过调用CodeGenerator.genCodeByCustomModelName方法来指定文件名称。
 
-```
+```java
 import com.kiwiframework.generator.CodeGenerator;
 
 public class CodeGeneratorTool {
@@ -115,7 +115,7 @@ public class CodeGeneratorTool {
 
 ## 项目中使用
 * 通用Mapper依赖第三方包tk-mybatis,数据源的mapper扫描配置类需要由org.mybatis.spring.mapper.MapperScannerConfigurer改为tk.mybatis.spring.mapper.MapperScannerConfigurer
-```
+```xml
 <bean  id="mapperScannerConfigurer"  class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
     <property name="basePackage" value="com.jd.demo.dao"></property>
     <property name="sqlSessionTemplateBeanName" value="sqlSession"></property>
@@ -147,7 +147,7 @@ model.use.lombok=true
 ![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp5.png?raw=true)
 * 以控制器模板controller.ftl为例，很多时候我们只需要复制一份生成器默认的模板，然后进行小的改动就可实现我们自定义的需求，例如我们通过替换模板中默认引用的统一api响应类ApiResult和ResultGenerator实现自己封装统一的api响应结果的需求。模板中必要的变量已经定义好，通过freemarker语法引入变量的值。
 
-```
+```java
 package ${basePackage}${baseController}${modulePath};
 import com.kiwiframework.easycoding.api.ApiResult;
 import com.kiwiframework.easycoding.api.ResultGenerator;
