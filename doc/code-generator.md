@@ -6,10 +6,12 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 * 统一响应结果封装
 * 集成MyBatis通用Mapper插件，实现单表业务零SQL
 * 集成PageHelper分页插件
+* 表格增减字段对代码的改动量非常小，快速、简单
 * 编码风格统一
 * 代码生成器支持业务路径配置，生成的model，mapper，service，controller等基础代码会自动放入业务路径下
 * 支持自定义生成的model类中的属性类型，如数据库字段类型smallint生成domain的字段类型为Integer
 * 支持自定义代码模块，对代码风格进行定制化
+* 支持生成lombok风格的代码，大大减少代码量和提升简洁性
 
 ## 环境要求
 * **spring4及以上** 基础方法的抽象封装依赖spring4提供的对泛型注入的支持，如果spring版本在4以下，service层的代码将不起作用，建议升级spring版本到4以上，我们也可以自己实现service层代码，或者通过 **[自定义模板](https://github.com/xiongzhao1217/kiwi-framework/blob/master/doc/code-generator.md#%E8%BF%9B%E9%98%B6%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF)** 生成servive层
@@ -17,7 +19,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 ## 快速上手
 * **引入maven依赖**
 
-```
+```java
 <dependency>
     <groupId>com.kiwiframework</groupId>
     <artifactId>kiwi-code-generator</artifactId>
@@ -34,8 +36,7 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 code-generator负责代码生成，scope申明为test，easy-coding包负责方法抽象封装，统一响应结果封装
 <br>**注：由于jar包发布在我自己的私服上，直接引入依赖jar包不会被下载下来，建议下载源码后打包发布到自己的私服上**
 * **快速配置**
-<br>一般我们会在src/test下进行代码生成操作，这样的好处是test下的代码不会被打包。
-在src/test/resources目录下新建code_generator.properties文件，内容如下
+<br>我们在在src/test/resources目录下新建code_generator.properties文件，内容如下
 
 ```
 # 需要生成代码的模块名称(项目mvc层在同一个模块中,该配置必填)
@@ -83,7 +84,7 @@ jdbc.diver.class.name=com.mysql.jdbc.Driver
 * **代码生成**
 <br>在src/test/java下的任意目录新建代码生成入口类，如CodeGeneratorTest.java，引入工具包中的CodeGenerator类，运行main方法，生成的代码会自动放入相应的位置。CodeGenerator提供了dao、servive和controller层分别生成和全部生成的静态方法，使用时可以根据需要选择。CodeGenerator.genCode方法默认会将数据库中的表名按照驼峰法转换后生成对应的java文件名称，如果我们有自定义的需求，可以通过调用CodeGenerator.genCodeByCustomModelName方法来指定文件名称。
 
-```
+```java
 import com.kiwiframework.generator.CodeGenerator;
 
 public class CodeGeneratorTool {
@@ -115,7 +116,7 @@ public class CodeGeneratorTool {
 
 ## 项目中使用
 * 通用Mapper依赖第三方包tk-mybatis,数据源的mapper扫描配置类需要由org.mybatis.spring.mapper.MapperScannerConfigurer改为tk.mybatis.spring.mapper.MapperScannerConfigurer
-```
+```xml
 <bean  id="mapperScannerConfigurer"  class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
     <property name="basePackage" value="com.jd.demo.dao"></property>
     <property name="sqlSessionTemplateBeanName" value="sqlSession"></property>
@@ -147,7 +148,7 @@ model.use.lombok=true
 ![image](https://github.com/xiongzhao1217/markdown-photos/blob/master/generator_examp5.png?raw=true)
 * 以控制器模板controller.ftl为例，很多时候我们只需要复制一份生成器默认的模板，然后进行小的改动就可实现我们自定义的需求，例如我们通过替换模板中默认引用的统一api响应类ApiResult和ResultGenerator实现自己封装统一的api响应结果的需求。模板中必要的变量已经定义好，通过freemarker语法引入变量的值。
 
-```
+```java
 package ${basePackage}${baseController}${modulePath};
 import com.kiwiframework.easycoding.api.ApiResult;
 import com.kiwiframework.easycoding.api.ResultGenerator;
