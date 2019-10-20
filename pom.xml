@@ -9,6 +9,29 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:xiongzhao1217/kiwi-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:xiongzhao1217/kiwi-framework.git</developerConnection>
+        <url>https://github.com/xiongzhao1217/kiwi-framework/tree/master</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>xiongzhao</name>
+            <email>xiongzhao1217@163.com</email>
+            <organization>https://github.com/xiongzhao1217</organization>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
     <modules>
         <module>kiwi-core</module>
         <module>kiwi-code-generator</module>
@@ -173,13 +196,28 @@
     </pluginRepositories>
 
     <distributionManagement>
+        <!--<repository>-->
+            <!--<id>rdc-releases</id>-->
+            <!--<url>https://repo.rdc.aliyun.com/repository/36688-release-YT160g/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>rdc-snapshots</id>-->
+            <!--<url>https://repo.rdc.aliyun.com/repository/36688-snapshot-bSVIZs/</url>-->
+        <!--</snapshotRepository>-->
+
         <repository>
-            <id>rdc-releases</id>
-            <url>https://repo.rdc.aliyun.com/repository/36688-release-YT160g/</url>
+            <!-- 这里的id必须要和全局配置中的release id 一致 -->
+            <id>sonatype_releases</id>
+            <name>Nexus Release Repository</name>
+            <!-- https://issues.sonatype.org创建issue成功后，对方回复的release发布地址-->
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
-            <id>rdc-snapshots</id>
-            <url>https://repo.rdc.aliyun.com/repository/36688-snapshot-bSVIZs/</url>
+            <!-- 这里的id必须要和全局配置中的snapshot id 一致 -->
+            <id>sonatype_snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <!-- https://issues.sonatype.org创建issue成功后，对方回复的snapshot发布地址-->
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 </project>

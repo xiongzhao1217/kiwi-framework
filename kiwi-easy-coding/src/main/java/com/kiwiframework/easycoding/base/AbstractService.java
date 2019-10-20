@@ -142,12 +142,13 @@ public abstract class AbstractService<T extends BaseModel> implements BaseServic
 
     @Override
     public PageInfo<T> findPageList(PageBean pageBean, final T model) {
-        PageInfo<T> page = PageHelper.startPage(pageBean.getPageNum(), pageBean.getPageSize()).doSelectPageInfo(new ISelect() {
-            @Override
-            public void doSelect() {
-                find(model);
-            }
-        });
+        PageInfo<T> page = PageHelper.startPage(pageBean.getPageNum(), pageBean.getPageSize())
+                .doSelectPageInfo(new ISelect() {
+                    @Override
+                    public void doSelect() {
+                        find(model);
+                    }
+                });
         return page;
     }
 

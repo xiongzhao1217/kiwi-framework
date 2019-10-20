@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
+ * 代码生成工具配置类
  * @author xiongzhao
  */
 public class Config {
