@@ -9,6 +9,8 @@ import java.security.NoSuchAlgorithmException;
 public class MD5Helper {
     /**
      * MD5 加密
+     * @param str 原文
+     * @return md5后的密文
      */
     public static String getMD5Str(String str) {
         MessageDigest messageDigest = null;

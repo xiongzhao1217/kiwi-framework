@@ -7,7 +7,6 @@ import java.util.Date;
  * model类基类
  * 方便在AbstractService基类中对日期进行自动设置
  * @author xiongzhao
- * @date 18/12/4
  */
 public class BaseModel {
 

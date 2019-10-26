@@ -21,7 +21,7 @@ public class CodeGenerateor {
 
     /**
      * 生成uuid
-     * @return
+     * @return 随机生成的uuid
      */
     public static String uuid(){
         return UUID.randomUUID().toString().replace("-", "");
@@ -30,8 +30,8 @@ public class CodeGenerateor {
 
     /**
      * 随机生成字符串
-     * @param count 字符串长度
-     * @return
+     * @param count 随机字符串长度
+     * @return 随机生成的字符串
      */
     public static String random(int count) {
         return RandomStringUtils.random(count, randomChars);
