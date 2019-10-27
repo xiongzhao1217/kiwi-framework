@@ -21,20 +21,20 @@ kiwi-code-generator和kiwi-easy-coding模块是一个基于MyBatis Generator & t
 
 ```java
 <dependency>
-    <groupId>com.kiwiframework</groupId>
+    <groupId>io.github.xiongzhao1217</groupId>
     <artifactId>kiwi-code-generator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <scope>test</scope>
 </dependency>
 <dependency>
-    <groupId>com.kiwiframework</groupId>
+    <groupId>io.github.xiongzhao1217</groupId>
     <artifactId>kiwi-easy-coding</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
 code-generator负责代码生成，scope申明为test，easy-coding包负责方法抽象封装，统一响应结果封装
-<br>**注：由于jar包发布在我自己的私服上，直接引入依赖jar包不会被下载下来，建议下载源码后打包发布到自己的私服上**
+<br>
 * **快速配置**
 <br>我们在在src/test/resources目录下新建code_generator.properties文件，内容如下
 
