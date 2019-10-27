@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kiwiframework</groupId>
+    <groupId>io.github.xiongzhao1217</groupId>
     <artifactId>kiwi-easy-coding</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <parent>
-        <groupId>com.kiwiframework</groupId>
+        <groupId>io.github.xiongzhao1217</groupId>
         <artifactId>kiwi-framework</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <dependencies>

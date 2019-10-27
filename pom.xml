@@ -4,10 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kiwiframework</groupId>
+    <groupId>io.github.xiongzhao1217</groupId>
     <artifactId>kiwi-framework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
+
+    <name>kiwi快速开发框架</name>
+    <url>https://github.com/xiongzhao1217/kiwi-framework</url>
+    <description>包含极简的代码生成工具，单点登录模块，多应用权限控制模块，常用工具类库等</description>
 
     <licenses>
         <license>
@@ -225,7 +229,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <!-- 这里的id必须要和全局配置中的release id 一致 -->
