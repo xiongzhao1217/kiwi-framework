@@ -46,7 +46,7 @@
         <java.version>1.7</java.version>
         <commons-lang3.version>3.6</commons-lang3.version>
         <google.guava.version>18.0</google.guava.version>
-        <alibaba.fastjson.version>1.2.46</alibaba.fastjson.version>
+        <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
         <mysql-connector.version>8.0.16</mysql-connector.version>
         <tk.mybatis.springboot.version>1.0.5</tk.mybatis.springboot.version>
         <tk.mybatis.version>4.1.1</tk.mybatis.version>
